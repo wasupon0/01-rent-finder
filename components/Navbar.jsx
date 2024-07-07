@@ -185,7 +185,7 @@ const Navbar = () => {
                   >
                     <Link
                       href="/profile"
-                      className="block px-4 py-2 text-sm text-gray-700"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-200"
                       role="menuitem"
                       tabIndex="-1"
                       id="user-menu-item-0"
@@ -195,10 +195,10 @@ const Navbar = () => {
                     </Link>
                     <Link
                       href="/properties/saved"
-                      className="block px-4 py-2 text-sm text-gray-700"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-200"
                       role="menuitem"
                       tabIndex="-1"
-                      id="user-menu-item-2"
+                      id="user-menu-item-1"
                       onClick={() => setIsProfileMenuOpen(false)}
                     >
                       Saved Properties
@@ -208,7 +208,7 @@ const Navbar = () => {
                         setIsProfileMenuOpen(false);
                         signOut();
                       }}
-                      className="block px-4 py-2 text-sm text-gray-700"
+                      className="block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-orange-200"
                       role="menuitem"
                       tabIndex="-1"
                       id="user-menu-item-2"
