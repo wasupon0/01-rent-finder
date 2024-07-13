@@ -1,6 +1,6 @@
-# Project Name
+# RentFinder
 
-## Project Slogan
+## Simplifying Apartment Searches
 
 _Short, one-liner, catchy and easy to understand_
 
