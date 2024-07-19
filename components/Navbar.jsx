@@ -70,6 +70,9 @@ const Navbar = () => {
 
               <span className="hidden ml-2 text-2xl font-bold text-white drop-shadow-lg md:block">
                 RentFinder
+                <span className="hidden -mt-1 text-sm font-bold text-white drop-shadow-lg md:block">
+                  レントファインダー
+                </span>
               </span>
             </Link>
             {/* <!-- Desktop Menu Hidden below md screens --> */}

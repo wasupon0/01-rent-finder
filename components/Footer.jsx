@@ -10,8 +10,9 @@ const Footer = () => {
     /* <!-- Footer --> */
     <footer className="py-4 mt-24 bg-gray-200">
       <div className="container flex flex-col items-center justify-between px-4 mx-auto md:flex-row">
-        <div className="mb-4 md:mb-0">
+        <div className="flex items-center mb-4 md:mb-0">
           <Image src={logo} alt="Logo" className="w-auto h-10" />
+          <span className="ml-2 text-gray-500">レントファインダー</span>
         </div>
         <div>
           <p className="mt-2 text-sm text-gray-500 md:mt-0">
