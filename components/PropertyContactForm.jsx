@@ -62,6 +62,8 @@ const PropertyContactForm = ({ property }) => {
         <p className="mb-4 text-green-500">
           Your message has been sent successfully!
         </p>
+      ) : property.owner === session.user.id ? (
+        <p>This is your property</p>
       ) : (
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
