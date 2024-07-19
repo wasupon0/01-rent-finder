@@ -56,7 +56,7 @@ const Message = ({ message }) => {
   return (
     <div className="relative p-4 bg-white border border-gray-200 rounded-md shadow-md">
       {!isRead && (
-        <div className="absolute px-2 py-1 text-white bg-yellow-500 rounded-md top-2 right-2">
+        <div className="absolute px-2 py-1 text-white bg-green-500 rounded-md top-2 right-2">
           New
         </div>
       )}

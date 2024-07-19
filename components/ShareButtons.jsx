@@ -3,6 +3,8 @@ import {
   EmailShareButton,
   FacebookIcon,
   FacebookShareButton,
+  LineIcon,
+  LineShareButton,
   TwitterIcon,
   TwitterShareButton,
   WhatsappIcon,
@@ -34,13 +36,9 @@ const ShareButtons = ({ property }) => {
           <TwitterIcon size={40} round={true} />
         </TwitterShareButton>
 
-        <WhatsappShareButton
-          url={shareUrl}
-          title={property.name}
-          separator=":: "
-        >
-          <WhatsappIcon size={40} round={true} />
-        </WhatsappShareButton>
+        <LineShareButton url={shareUrl} title={property.name}>
+          <LineIcon size={40} round={true} />
+        </LineShareButton>
 
         <EmailShareButton
           url={shareUrl}
