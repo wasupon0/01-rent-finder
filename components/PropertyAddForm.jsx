@@ -14,7 +14,7 @@ const PropertyAddForm = () => {
     },
     beds: "3",
     baths: "2",
-    square_feet: "1800",
+    square_meter: "1800",
     amenities: ["Free Parking"],
     rates: {
       weekly: "",
@@ -119,13 +119,15 @@ const PropertyAddForm = () => {
             value={fields.type}
             onChange={handleChange}
           >
-            <option value="Apartment">Apartment</option>
-            <option value="Condo">Condo</option>
-            <option value="House">House</option>
-            <option value="Cabin Or Cottage">Cabin or Cottage</option>
-            <option value="Room">Room</option>
+            <option value="All">All</option>
             <option value="Studio">Studio</option>
-            <option value="Other">Other</option>
+            <option value="1K">1K</option>
+            <option value="1DK">1DK</option>
+            <option value="1LDK">1LDK</option>
+            <option value="2K">2K</option>
+            <option value="2DK">2DK</option>
+            <option value="2LDK">2LDK</option>
+            <option value="3K">3K</option>
           </select>
         </div>
         <div className="mb-4">
@@ -240,18 +242,18 @@ const PropertyAddForm = () => {
           </div>
           <div className="w-full pl-2 sm:w-1/3">
             <label
-              htmlFor="square_feet"
+              htmlFor="square_meter"
               className="block mb-2 font-bold text-gray-700"
             >
-              Square Feet
+              Square Meter
             </label>
             <input
               type="number"
-              id="square_feet"
-              name="square_feet"
+              id="square_meter"
+              name="square_meter"
               className="w-full px-3 py-2 border rounded"
               required
-              value={fields.square_feet}
+              value={fields.square_meter}
               onChange={handleChange}
             />
           </div>
