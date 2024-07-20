@@ -28,7 +28,7 @@ const PropertyMap = ({ property }) => {
     const fetchCoords = async () => {
       try {
         const res = await fromAddress(
-          `${property.location.street} ${property.location.city} ${property.location.state} ${property.location.zipcode}`,
+          `${property.location.station} ${property.location.ward} ${property.location.city} ${property.location.floor}`,
         );
 
         // Check for results

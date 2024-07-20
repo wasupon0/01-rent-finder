@@ -7,19 +7,19 @@ const PropertyAddForm = () => {
     name: "Test Property",
     description: "",
     location: {
-      street: "",
+      station: "",
+      ward: "Test Ward",
       city: "Test City",
-      state: "Test State",
-      zipcode: "",
+      floor: "",
     },
-    beds: "3",
-    baths: "2",
-    square_meter: "1800",
+    age: "3",
+    distance: "2",
+    square_meter: "25",
     amenities: ["Free Parking"],
-    rates: {
-      weekly: "",
-      monthly: "2000",
-      nightly: "",
+    cost: {
+      fee: "",
+      fee: "2000",
+      deposit: "",
     },
     seller_info: {
       name: "",
@@ -71,7 +71,7 @@ const PropertyAddForm = () => {
         updatedAmenities.splice(index, 1);
       }
     }
-    // Update state with updated array
+    // Update city with updated array
     setFields((prevFields) => ({
       ...prevFields,
       amenities: updatedAmenities,
@@ -89,7 +89,7 @@ const PropertyAddForm = () => {
       updatedImages.push(file);
     }
 
-    // Update state with array of images
+    // Update city with array of images
     setFields((prevFields) => ({
       ...prevFields,
       images: updatedImages,
@@ -167,11 +167,21 @@ const PropertyAddForm = () => {
           <label className="block mb-2 font-bold text-gray-700">Location</label>
           <input
             type="text"
-            id="street"
-            name="location.street"
+            id="station"
+            name="location.station"
             className="w-full px-3 py-2 mb-2 border rounded"
-            placeholder="Street"
-            value={fields.location.street}
+            placeholder="Station"
+            value={fields.location.station}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            id="ward"
+            name="location.ward"
+            className="w-full px-3 py-2 mb-2 border rounded"
+            placeholder="Ward"
+            required
+            value={fields.location.ward}
             onChange={handleChange}
           />
           <input
@@ -186,57 +196,44 @@ const PropertyAddForm = () => {
           />
           <input
             type="text"
-            id="state"
-            name="location.state"
+            id="floor"
+            name="location.floor"
             className="w-full px-3 py-2 mb-2 border rounded"
-            placeholder="State"
-            required
-            value={fields.location.state}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            id="zipcode"
-            name="location.zipcode"
-            className="w-full px-3 py-2 mb-2 border rounded"
-            placeholder="Zipcode"
-            value={fields.location.zipcode}
+            placeholder="Floor"
+            value={fields.location.floor}
             onChange={handleChange}
           />
         </div>
 
         <div className="flex flex-wrap mb-4">
           <div className="w-full pr-2 sm:w-1/3">
-            <label
-              htmlFor="beds"
-              className="block mb-2 font-bold text-gray-700"
-            >
-              Beds
+            <label htmlFor="age" className="block mb-2 font-bold text-gray-700">
+              Age (years)
             </label>
             <input
               type="number"
-              id="beds"
-              name="beds"
+              id="age"
+              name="age"
               className="w-full px-3 py-2 border rounded"
               required
-              value={fields.beds}
+              value={fields.age}
               onChange={handleChange}
             />
           </div>
           <div className="w-full px-2 sm:w-1/3">
             <label
-              htmlFor="baths"
+              htmlFor="distance"
               className="block mb-2 font-bold text-gray-700"
             >
-              Baths
+              Distance (mins)
             </label>
             <input
               type="number"
-              id="baths"
-              name="baths"
+              id="distance"
+              name="distance"
               className="w-full px-3 py-2 border rounded"
               required
-              value={fields.baths}
+              value={fields.distance}
               onChange={handleChange}
             />
           </div>
@@ -245,7 +242,7 @@ const PropertyAddForm = () => {
               htmlFor="square_meter"
               className="block mb-2 font-bold text-gray-700"
             >
-              Square Meter
+              Square meter
             </label>
             <input
               type="number"
@@ -453,45 +450,45 @@ const PropertyAddForm = () => {
 
         <div className="p-4 mb-4 bg-orange-50">
           <label className="block mb-2 font-bold text-gray-700">
-            Rates (Leave blank if not applicable)
+            Cost (Leave blank if not applicable)
           </label>
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
             <div className="flex items-center">
-              <label htmlFor="weekly_rate" className="mr-2">
-                Weekly
-              </label>
-              <input
-                type="number"
-                id="weekly_rate"
-                name="rates.weekly"
-                className="w-full px-3 py-2 border rounded"
-                value={fields.rates.weekly}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="flex items-center">
-              <label htmlFor="monthly_rate" className="mr-2">
+              <label htmlFor="monthly_cost" className="mr-2">
                 Monthly
               </label>
               <input
                 type="number"
-                id="monthly_rate"
-                name="rates.monthly"
+                id="monthly_cost"
+                name="cost.monthly"
                 className="w-full px-3 py-2 border rounded"
-                value={fields.rates.monthly}
+                value={fields.cost.monthly}
                 onChange={handleChange}
               />
             </div>
             <div className="flex items-center">
-              <label htmlFor="nightly_rate" className="mr-2">
-                Nightly
+              <label htmlFor="fee_cost" className="mr-2">
+                Fee
               </label>
               <input
                 type="number"
-                id="nightly_rate"
-                name="rates.nightly"
+                id="fee_cost"
+                name="cost.fee"
                 className="w-full px-3 py-2 border rounded"
-                value={fields.rates.nightly}
+                value={fields.cost.fee}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="flex items-center">
+              <label htmlFor="deposit_cost" className="mr-2">
+                Deposit
+              </label>
+              <input
+                type="number"
+                id="deposit_cost"
+                name="cost.deposit"
+                className="w-full px-3 py-2 border rounded"
+                value={fields.cost.deposit}
                 onChange={handleChange}
               />
             </div>

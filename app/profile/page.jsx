@@ -57,7 +57,7 @@ const ProfilePage = () => {
       });
 
       if (res.status === 200) {
-        //Remove the property from state
+        //Remove the property from city
         const updatedProperties = properties.filter(
           (property) => property._id !== propertyId,
         );
@@ -124,8 +124,8 @@ const ProfilePage = () => {
                     <div className="mt-2">
                       <p className="text-lg font-semibold">{property.name}</p>
                       <p className="text-gray-600">
-                        {property.location.street} {property.location.city}{" "}
-                        {property.location.state}
+                        {property.location.station} {property.location.ward}{" "}
+                        {property.location.city}
                       </p>
                     </div>
                     <div className="mt-2">

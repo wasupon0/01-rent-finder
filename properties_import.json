@@ -3,15 +3,15 @@
     "owner": "1",
     "name": "Boston Commons Retreat",
     "type": "Apartment",
-    "description": "This is a beautiful apartment located near the commons. It is a 2 bedroom apartment with a full kitchen and bathroom. It is available for weekly or monthly rentals.",
+    "description": "This is a beautiful apartment located near the commons. It is a 2 bedroom apartment with a full kitchen and bathroom. It is available for fee or fee rentals.",
     "location": {
-      "street": "120 Tremont Street",
-      "city": "Boston",
-      "state": "MA",
-      "zipcode": "02108"
+      "station": "120 Tremont Station",
+      "ward": "Boston",
+      "city": "MA",
+      "floor": "02108"
     },
-    "beds": 2,
-    "baths": 1,
+    "age": 2,
+    "distance": 1,
     "square_meter": 1500,
     "amenities": [
       "Wifi",
@@ -29,9 +29,9 @@
       "Smart TV",
       "Coffee Maker"
     ],
-    "rates": {
-      "weekly": 1100,
-      "monthly": 4200
+    "cost": {
+      "fee": 1100,
+      "fee": 4200
     },
     "seller_info": {
       "name": "John Doe",
@@ -47,16 +47,16 @@
     "owner": "1",
     "name": "Cozy Downtown Loft",
     "type": "Apartment",
-    "description": "A cozy downtown loft with great city views.",
+    "description": "A cozy downtown loft with great ward views.",
     "location": {
-      "street": "45 Main Street",
-      "city": "New York",
-      "state": "NY",
-      "zipcode": "10001"
+      "station": "45 Main Station",
+      "ward": "New York",
+      "city": "NY",
+      "floor": "10001"
     },
-    "beds": 1,
-    "baths": 1,
-    "square_meter": 1800,
+    "age": 1,
+    "distance": 1,
+    "square_meter": 25,
     "amenities": [
       "Wifi",
       "Full kitchen",
@@ -72,9 +72,9 @@
       "Smart TV",
       "Outdoor Grill/BBQ"
     ],
-    "rates": {
-      "weekly": 1000,
-      "monthly": 4000
+    "cost": {
+      "fee": 1000,
+      "fee": 4000
     },
     "seller_info": {
       "name": "Jane Smith",
@@ -92,13 +92,13 @@
     "type": "Condo",
     "description": "Experience luxury in this stunning condo with breathtaking views.",
     "location": {
-      "street": "500 Lux Lane",
-      "city": "Los Angeles",
-      "state": "CA",
-      "zipcode": "90001"
+      "station": "500 Lux Lane",
+      "ward": "Los Angeles",
+      "city": "CA",
+      "floor": "90001"
     },
-    "beds": 3,
-    "baths": 2,
+    "age": 3,
+    "distance": 2,
     "square_meter": 2200,
     "amenities": [
       "Wifi",
@@ -116,10 +116,10 @@
       "Smart TV",
       "Coffee Maker"
     ],
-    "rates": {
-      "nightly": 200,
-      "weekly": 750,
-      "monthly": 3300
+    "cost": {
+      "deposit": 200,
+      "fee": 750,
+      "fee": 3300
     },
     "seller_info": {
       "name": "David Johnson",
@@ -137,13 +137,13 @@
     "type": "Cottage Or Cabin",
     "description": "Escape to this charming cottage for a peaceful retreat.",
     "location": {
-      "street": "123 Countryside Lane",
-      "city": "Austin",
-      "state": "TX",
-      "zipcode": "78701"
+      "station": "123 Countryside Lane",
+      "ward": "Austin",
+      "city": "TX",
+      "floor": "78701"
     },
-    "beds": 1,
-    "baths": 1,
+    "age": 1,
+    "distance": 1,
     "square_meter": 900,
     "amenities": [
       "Fireplace",
@@ -151,8 +151,8 @@
       "Balcony/Patio",
       "Coffee Maker"
     ],
-    "rates": {
-      "weekly": 2000
+    "cost": {
+      "fee": 2000
     },
     "seller_info": {
       "name": "Emily Davis",
@@ -170,13 +170,13 @@
     "type": "Studio",
     "description": "Stay in style in this modern downtown studio apartment.",
     "location": {
-      "street": "75 Urban Avenue",
-      "city": "Chicago",
-      "state": "IL",
-      "zipcode": "60601"
+      "station": "75 Urban Avenue",
+      "ward": "Chicago",
+      "city": "IL",
+      "floor": "60601"
     },
-    "beds": 1,
-    "baths": 1,
+    "age": 1,
+    "distance": 1,
     "square_meter": 900,
     "amenities": [
       "High-Speed Internet",
@@ -185,9 +185,9 @@
       "Gym/Fitness Center",
       "Outdoor Grill/BBQ"
     ],
-    "rates": {
-      "weekly": 1100,
-      "monthly": 4200
+    "cost": {
+      "fee": 1100,
+      "fee": 4200
     },
     "seller_info": {
       "name": "Michael Brown",
@@ -205,13 +205,13 @@
     "type": "House",
     "description": "Escape to this seaside house for a relaxing getaway.",
     "location": {
-      "street": "456 Oceanfront Drive",
-      "city": "Miami",
-      "state": "FL",
-      "zipcode": "33101"
+      "station": "456 Oceanfront Drive",
+      "ward": "Miami",
+      "city": "FL",
+      "floor": "33101"
     },
-    "beds": 4,
-    "baths": 3,
+    "age": 4,
+    "distance": 3,
     "square_meter": 2800,
     "amenities": [
       "Beach Access",
@@ -220,9 +220,9 @@
       "Smart TV",
       "Outdoor Grill/BBQ"
     ],
-    "rates": {
-      "nightly": 500,
-      "weekly": 2500
+    "cost": {
+      "deposit": 500,
+      "fee": 2500
     },
     "seller_info": {
       "name": "Sarah Wilson",
@@ -240,13 +240,13 @@
     "type": "Cottage Or Cabin",
     "description": "Experience nature in this cozy rustic cabin.",
     "location": {
-      "street": "789 Forest Lane",
-      "city": "Denver",
-      "state": "CO",
-      "zipcode": "80201"
+      "station": "789 Forest Lane",
+      "ward": "Denver",
+      "city": "CO",
+      "floor": "80201"
     },
-    "beds": 2,
-    "baths": 1,
+    "age": 2,
+    "distance": 1,
     "square_meter": 1100,
     "amenities": [
       "Fireplace",
@@ -254,9 +254,9 @@
       "Hiking Trails Access",
       "Pet-Friendly"
     ],
-    "rates": {
-      "nightly": 475,
-      "weekly": 2000
+    "cost": {
+      "deposit": 475,
+      "fee": 2000
     },
     "seller_info": {
       "name": "Robert Anderson",
@@ -274,23 +274,23 @@
     "type": "Chalet",
     "description": "Hit the slopes from this cozy ski-in/ski-out chalet.",
     "location": {
-      "street": "321 Mountain Road",
-      "city": "Aspen",
-      "state": "CO",
-      "zipcode": "81611"
+      "station": "321 Mountain Road",
+      "ward": "Aspen",
+      "city": "CO",
+      "floor": "81611"
     },
-    "beds": 3,
-    "baths": 2,
-    "square_meter": 1800,
+    "age": 3,
+    "distance": 2,
+    "square_meter": 25,
     "amenities": [
       "Ski Equipment Storage",
       "Fireplace",
       "Balcony/Patio",
       "Smart TV"
     ],
-    "rates": {
-      "nightly": 300,
-      "weekly": 1100
+    "cost": {
+      "deposit": 300,
+      "fee": 1100
     },
     "seller_info": {
       "name": "Jennifer Martin",
@@ -308,13 +308,13 @@
     "type": "House",
     "description": "Enjoy stunning mountain views from this spacious retreat.",
     "location": {
-      "street": "600 Summit Drive",
-      "city": "Boulder",
-      "state": "CO",
-      "zipcode": "80301"
+      "station": "600 Summit Drive",
+      "ward": "Boulder",
+      "city": "CO",
+      "floor": "80301"
     },
-    "beds": 4,
-    "baths": 3,
+    "age": 4,
+    "distance": 3,
     "square_meter": 2400,
     "amenities": [
       "Mountain View",
@@ -323,9 +323,9 @@
       "Smart TV",
       "Outdoor Grill/BBQ"
     ],
-    "rates": {
-      "weekly": 1000,
-      "monthly": 3800
+    "cost": {
+      "fee": 1000,
+      "fee": 3800
     },
     "seller_info": {
       "name": "Lisa Taylor",
@@ -343,13 +343,13 @@
     "type": "Apartment",
     "description": "Step back in time with a stay in this historic downtown loft.",
     "location": {
-      "street": "123 History Lane",
-      "city": "Philadelphia",
-      "state": "PA",
-      "zipcode": "19101"
+      "station": "123 History Lane",
+      "ward": "Philadelphia",
+      "city": "PA",
+      "floor": "19101"
     },
-    "beds": 2,
-    "baths": 1,
+    "age": 2,
+    "distance": 1,
     "square_meter": 1200,
     "amenities": [
       "High-Speed Internet",
@@ -357,9 +357,9 @@
       "Smart TV",
       "Coffee Maker"
     ],
-    "rates": {
-      "weekly": 550,
-      "monthly": 2100
+    "cost": {
+      "fee": 550,
+      "fee": 2100
     },
     "seller_info": {
       "name": "Matthew Harris",

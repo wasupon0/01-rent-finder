@@ -60,19 +60,19 @@ export const POST = async (request) => {
       name: formData.get("name"),
       description: formData.get("description"),
       location: {
-        street: formData.get("location.street"),
+        station: formData.get("location.station"),
+        ward: formData.get("location.ward"),
         city: formData.get("location.city"),
-        state: formData.get("location.state"),
-        zipcode: formData.get("location.zipcode"),
+        floor: formData.get("location.floor"),
       },
-      beds: formData.get("beds"),
-      baths: formData.get("baths"),
+      age: formData.get("age"),
+      distance: formData.get("distance"),
       square_meter: formData.get("square_meter"),
       amenities,
-      rates: {
-        weekly: formData.get("rates.weekly"),
-        monthly: formData.get("rates.monthly"),
-        nightly: formData.get("rates.nightly"),
+      cost: {
+        monthly: formData.get("cost.monthly"),
+        fee: formData.get("cost.fee"),
+        deposit: formData.get("cost.deposit"),
       },
       seller_info: {
         name: formData.get("seller_info.name"),

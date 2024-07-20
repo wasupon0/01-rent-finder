@@ -2,23 +2,23 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import {
-  FaBath,
-  FaBed,
+  FaClock,
   FaMapMarker,
   FaMoneyBill,
   FaRulerCombined,
+  FaWalking,
 } from "react-icons/fa";
 
 const PropertyCard = ({ property }) => {
   const getRateDisplay = () => {
-    const { rates } = property;
+    const { cost } = property;
 
-    if (rates.monthly) {
-      return `${rates.monthly.toLocaleString()}/mo`;
-    } else if (rates.weekly) {
-      return `${rates.weekly.toLocaleString()}/wk`;
-    } else if (rates.nightly) {
-      return `${rates.nightly.toLocaleString()}/night`;
+    if (cost.monthly) {
+      return `${cost.monthly.toLocaleString()} yen`;
+    } else if (cost.fee) {
+      return `${cost.fee.toLocaleString()} yen`;
+    } else if (cost.deposit) {
+      return `${cost.deposit.toLocaleString()} yen`;
     }
   };
 
@@ -44,35 +44,35 @@ const PropertyCard = ({ property }) => {
 
         <div className="flex justify-center gap-4 mb-4 text-gray-500">
           <p>
-            <FaBed className="inline mr-2" /> {property.beds}{" "}
-            <span className="md:hidden lg:inline">Beds</span>
+            <FaClock className="inline mr-2" /> {property.age}{" "}
+            <span className="md:hidden lg:inline">Age (years)</span>
           </p>
           <p>
-            <FaBath className="inline mr-2" /> {property.baths}{" "}
-            <span className="md:hidden lg:inline">Baths</span>
+            <FaWalking className="inline mr-2" /> {property.distance}{" "}
+            <span className="md:hidden lg:inline">Distance (mins)</span>
           </p>
           <p>
             <FaRulerCombined className="inline mr-2" />
             {property.square_meter}
-            <span className="md:hidden lg:inline"> sqft</span>
+            <span className="md:hidden lg:inline"> Square meter</span>
           </p>
         </div>
 
         <div className="flex justify-center gap-4 mb-4 text-sm font-bold text-green-700">
-          {property.rates.nightly && (
+          {property.cost.monthly && (
             <p>
-              <FaMoneyBill className="inline mr-2" /> Nightly
+              <FaMoneyBill className="inline mr-2" /> Monthly
             </p>
           )}
-          {property.rates.weekly && (
+          {property.cost.fee && (
             <p>
-              <FaMoneyBill className="inline mr-2" /> Weekly
+              <FaMoneyBill className="inline mr-2" /> Fee
             </p>
           )}
 
-          {property.rates.monthly && (
+          {property.cost.deposit && (
             <p>
-              <FaMoneyBill className="inline mr-2" /> Monthly
+              <FaMoneyBill className="inline mr-2" /> Deposit
             </p>
           )}
         </div>
@@ -84,7 +84,7 @@ const PropertyCard = ({ property }) => {
             <FaMapMarker className="mt-1 text-orange-700" />
             <span className="text-orange-700">
               {" "}
-              {property.location.city} {property.location.state}{" "}
+              {property.location.ward} {property.location.city}{" "}
             </span>
           </div>
           <Link

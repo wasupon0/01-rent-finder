@@ -1,23 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  FaBath,
-  FaBed,
+  FaClock,
   FaMapMarker,
   FaMoneyBill,
   FaRulerCombined,
+  FaWalking,
 } from "react-icons/fa";
 
 const FeaturedPropertyCard = ({ property }) => {
   const getRateDisplay = () => {
-    const { rates } = property;
+    const { cost } = property;
 
-    if (rates.monthly) {
-      return `${rates.monthly.toLocaleString()}/mo`;
-    } else if (rates.weekly) {
-      return `${rates.weekly.toLocaleString()}/wk`;
-    } else if (rates.nightly) {
-      return `${rates.nightly.toLocaleString()}/night`;
+    if (cost.monthly) {
+      return `${cost.monthly.toLocaleString()} yen`;
+    } else if (cost.fee) {
+      return `${cost.fee.toLocaleString()} yen`;
+    } else if (cost.deposit) {
+      return `${cost.deposit.toLocaleString()} yen`;
     }
   };
 
@@ -39,36 +39,36 @@ const FeaturedPropertyCard = ({ property }) => {
         </h3>
         <div className="flex justify-center gap-4 mb-4 text-gray-500">
           <p>
-            <FaBed className="inline-block mr-2" /> {property.beds}{" "}
-            <span className="md:hidden lg:inline">Beds</span>
+            <FaClock className="inline-block mr-2" /> {property.age}{" "}
+            <span className="md:hidden lg:inline">Age (years)</span>
           </p>
           <p>
-            <FaBath className="inline-block mr-2" /> {property.baths}{" "}
-            <span className="md:hidden lg:inline">Baths</span>
+            <FaWalking className="inline-block mr-2" /> {property.distance}{" "}
+            <span className="md:hidden lg:inline">Distance (mins)</span>
           </p>
           <p>
             <FaRulerCombined className="inline-block mr-2" />
             {property.square_meter}{" "}
-            <span className="md:hidden lg:inline">sqft</span>
+            <span className="md:hidden lg:inline">Square meter</span>
           </p>
         </div>
 
         <div className="flex justify-center gap-4 mb-4 text-sm text-green-900">
-          {property.rates.nightly && (
-            <p>
-              <FaMoneyBill className="inline mr-2" /> Nightly
-            </p>
-          )}
-
-          {property.rates.weekly && (
-            <p>
-              <FaMoneyBill className="inline mr-2" /> Weekly
-            </p>
-          )}
-
-          {property.rates.monthly && (
+          {property.cost.monthly && (
             <p>
               <FaMoneyBill className="inline mr-2" /> Monthly
+            </p>
+          )}
+
+          {property.cost.fee && (
+            <p>
+              <FaMoneyBill className="inline mr-2" /> Fee
+            </p>
+          )}
+
+          {property.cost.deposit && (
+            <p>
+              <FaMoneyBill className="inline mr-2" /> Deposit
             </p>
           )}
         </div>
@@ -80,7 +80,7 @@ const FeaturedPropertyCard = ({ property }) => {
             <FaMapMarker className="text-lg text-orange-700" />
             <span className="text-orange-700">
               {" "}
-              {property.location.city} {property.location.state}
+              {property.location.ward} {property.location.city}
             </span>
           </div>
           <Link

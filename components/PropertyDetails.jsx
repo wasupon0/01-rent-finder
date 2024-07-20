@@ -1,12 +1,12 @@
 import PropertyMap from "@/components/PropertyMap";
 import React from "react";
 import {
-  FaBath,
-  FaBed,
   FaCheck,
+  FaClock,
   FaMapMarker,
+  FaMoneyBill,
   FaRulerCombined,
-  FaTimes,
+  FaWalking,
 } from "react-icons/fa";
 
 const PropertyDetails = ({ property }) => {
@@ -19,8 +19,8 @@ const PropertyDetails = ({ property }) => {
           <FaMapMarker className="mr-2 text-lg text-orange-700 fa-solid fa-location-dot" />
           {property.location && (
             <p className="text-orange-700">
-              {property.location.street}, {property.location.city},{" "}
-              {property.location.state}
+              {property.location.station}, {property.location.ward},{" "}
+              {property.location.city}
             </p>
           )}
         </div>
@@ -30,39 +30,39 @@ const PropertyDetails = ({ property }) => {
         </h3>
         <div className="flex flex-col justify-around md:flex-row">
           <div className="flex items-center justify-center pb-4 mb-4 border-b border-gray-200 md:border-b-0 md:pb-0">
-            <div className="mr-2 font-bold text-gray-500">Nightly</div>
-            {property.rates && (
+            <div className="mr-2 font-bold text-gray-500">Monthly</div>
+            {property.cost && (
               <div className="text-2xl font-bold text-orange-500">
-                {property.rates.nightly ? (
-                  `$${property.rates.nightly.toLocaleString()}`
+                {property.cost.monthly ? (
+                  `$${property.cost.monthly.toLocaleString()}`
                 ) : (
-                  <FaTimes className="text-red-700" />
+                  <FaMoneyBill className="text-red-700" />
                 )}
               </div>
             )}
           </div>
           <div className="flex items-center justify-center pb-4 mb-4 border-b border-gray-200 md:border-b-0 md:pb-0">
-            <div className="mr-2 font-bold text-gray-500">Weekly</div>
-            {property.rates && (
+            <div className="mr-2 font-bold text-gray-500">Fee</div>
+            {property.cost && (
               <div className="text-2xl font-bold text-orange-500">
                 {" "}
-                {property.rates.weekly ? (
-                  `$${property.rates.weekly.toLocaleString()}`
+                {property.cost.fee ? (
+                  `$${property.cost.fee.toLocaleString()}`
                 ) : (
-                  <FaTimes className="text-red-700" />
+                  <FaMoneyBill className="text-red-700" />
                 )}
               </div>
             )}
           </div>
           <div className="flex items-center justify-center pb-4 mb-4 md:pb-0">
-            <div className="mr-2 font-bold text-gray-500">Monthly</div>
-            {property.rates && (
+            <div className="mr-2 font-bold text-gray-500">Deposit</div>
+            {property.cost && (
               <div className="text-2xl font-bold text-orange-500">
                 {" "}
-                {property.rates.monthly ? (
-                  `$${property.rates.monthly.toLocaleString()}`
+                {property.cost.deposit ? (
+                  `$${property.cost.deposit.toLocaleString()}`
                 ) : (
-                  <FaTimes className="text-red-700" />
+                  <FaMoneyBill className="text-red-700" />
                 )}
               </div>
             )}
@@ -74,17 +74,17 @@ const PropertyDetails = ({ property }) => {
         <h3 className="mb-6 text-lg font-bold">Description & Details</h3>
         <div className="flex justify-center gap-4 mb-4 text-xl text-orange-500 space-x-9">
           <p>
-            <FaBed className="inline-block mr-2" /> {property.beds} {""}
-            <span className="hidden sm:inline">Beds</span>
+            <FaClock className="inline-block mr-2" /> {property.age} {""}
+            <span className="hidden sm:inline">Age (years)</span>
           </p>
           <p>
-            <FaBath className="inline-block mr-2" /> {property.baths} {""}
-            <span className="hidden sm:inline">Baths</span>
+            <FaWalking className="inline-block mr-2" /> {property.distance} {""}
+            <span className="hidden sm:inline">Distance (mins)</span>
           </p>
           <p>
             <FaRulerCombined className="inline-block mr-2" />{" "}
             {property.square_meter} {""}
-            <span className="hidden sm:inline">sqft</span>
+            <span className="hidden sm:inline">Square meter</span>
           </p>
         </div>
         <p className="mb-4 text-center text-gray-500">{property.description}</p>

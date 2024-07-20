@@ -19,24 +19,24 @@ const PropertySchema = new Schema(
       type: String,
     },
     location: {
-      street: {
+      station: {
+        type: String,
+      },
+      ward: {
         type: String,
       },
       city: {
         type: String,
       },
-      state: {
-        type: String,
-      },
-      zipcode: {
+      floor: {
         type: String,
       },
     },
-    beds: {
+    age: {
       type: Number,
       required: true,
     },
-    baths: {
+    distance: {
       type: Number,
       required: true,
     },
@@ -49,14 +49,14 @@ const PropertySchema = new Schema(
         type: String,
       },
     ],
-    rates: {
-      nightly: {
-        type: Number,
-      },
-      weekly: {
-        type: Number,
-      },
+    cost: {
       monthly: {
+        type: Number,
+      },
+      fee: {
+        type: Number,
+      },
+      deposit: {
         type: Number,
       },
     },
