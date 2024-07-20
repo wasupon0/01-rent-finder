@@ -1,6 +1,5 @@
 "use client";
 
-import { set } from "mongoose";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
@@ -63,83 +62,105 @@ const PropertyContactForm = ({ property }) => {
           Your message has been sent successfully!
         </p>
       ) : property.owner === session.user.id ? (
-        <p>This is your property</p>
+        <>
+          <p>This is your property</p>
+          <br />
+          <p>
+            <strong>name: </strong>
+            {property.seller_info.name}
+          </p>
+          <p>
+            <strong>email: </strong>
+            {property.seller_info.email}
+          </p>
+        </>
       ) : (
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label
-              className="block mb-2 text-sm font-bold text-gray-700"
-              htmlFor="name"
-            >
-              Name:
-            </label>
-            <input
-              className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-              id="name"
-              type="text"
-              placeholder="Enter your name"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              className="block mb-2 text-sm font-bold text-gray-700"
-              htmlFor="email"
-            >
-              Email:
-            </label>
-            <input
-              className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-              id="email"
-              type="email"
-              placeholder="Enter your email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              className="block mb-2 text-sm font-bold text-gray-700"
-              htmlFor="phone"
-            >
-              Phone:
-            </label>
-            <input
-              className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-              id="phone"
-              type="text"
-              placeholder="Enter your phone number"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              className="block mb-2 text-sm font-bold text-gray-700"
-              htmlFor="message"
-            >
-              Message:
-            </label>
-            <textarea
-              className="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none h-44 focus:outline-none focus:shadow-outline"
-              id="message"
-              placeholder="Enter your message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-            ></textarea>
-          </div>
-          <div>
-            <button
-              className="flex items-center justify-center w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-600 focus:outline-none focus:shadow-outline"
-              type="submit"
-            >
-              <FaPaperPlane className="mr-2" /> Send Message
-            </button>
-          </div>
-        </form>
+        <>
+          <p>
+            <strong>name: </strong>
+            {property.seller_info.name}
+          </p>
+          <p>
+            <strong>email: </strong>
+            {property.seller_info.email}
+          </p>
+          <br />
+          <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <label
+                className="block mb-2 text-sm font-bold text-gray-700"
+                htmlFor="name"
+              >
+                Name:
+              </label>
+              <input
+                className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                id="name"
+                type="text"
+                placeholder="Enter your name"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div className="mb-4">
+              <label
+                className="block mb-2 text-sm font-bold text-gray-700"
+                htmlFor="email"
+              >
+                Email:
+              </label>
+              <input
+                className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                id="email"
+                type="email"
+                placeholder="Enter your email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="mb-4">
+              <label
+                className="block mb-2 text-sm font-bold text-gray-700"
+                htmlFor="phone"
+              >
+                Phone:
+              </label>
+              <input
+                className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                id="phone"
+                type="text"
+                placeholder="Enter your phone number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+            </div>
+            <div className="mb-4">
+              <label
+                className="block mb-2 text-sm font-bold text-gray-700"
+                htmlFor="message"
+              >
+                Message:
+              </label>
+              <textarea
+                className="w-full px-3 py-2 text-gray-700 border rounded shadow appearance-none h-44 focus:outline-none focus:shadow-outline"
+                id="message"
+                placeholder="Enter your message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              ></textarea>
+            </div>
+            <div>
+              <button
+                className="flex items-center justify-center w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-600 focus:outline-none focus:shadow-outline"
+                type="submit"
+              >
+                <FaPaperPlane className="mr-2" /> Send Message
+              </button>
+            </div>
+          </form>
+        </>
       )}
     </div>
   );

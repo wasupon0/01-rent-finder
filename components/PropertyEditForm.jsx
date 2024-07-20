@@ -244,7 +244,7 @@ const PropertyEditForm = () => {
         <div className="flex flex-wrap mb-4">
           <div className="w-full pr-2 sm:w-1/3">
             <label htmlFor="age" className="block mb-2 font-bold text-gray-700">
-              Age (years)
+              years
             </label>
             <input
               type="number"
@@ -261,7 +261,7 @@ const PropertyEditForm = () => {
               htmlFor="distance"
               className="block mb-2 font-bold text-gray-700"
             >
-              Distance (mins)
+              minutes
             </label>
             <input
               type="number"
@@ -278,7 +278,7 @@ const PropertyEditForm = () => {
               htmlFor="square_meter"
               className="block mb-2 font-bold text-gray-700"
             >
-              Square meter
+              square meter
             </label>
             <input
               type="number"

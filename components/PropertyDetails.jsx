@@ -13,7 +13,9 @@ const PropertyDetails = ({ property }) => {
   return (
     <main>
       <div className="p-6 text-center bg-white rounded-lg shadow-md md:text-left">
-        <div className="mb-4 text-gray-500">{property.type}</div>
+        <div className="mb-4 text-lg font-bold text-gray-500">
+          {property.type}
+        </div>
         <h1 className="mb-4 text-3xl font-bold">{property.name}</h1>
         <div className="flex justify-center mb-4 text-gray-500 align-middle md:justify-start">
           <FaMapMarker className="mr-2 text-lg text-orange-700 fa-solid fa-location-dot" />
@@ -26,7 +28,7 @@ const PropertyDetails = ({ property }) => {
         </div>
 
         <h3 className="p-2 my-6 text-lg font-bold text-white bg-gray-800 border rounded-xl">
-          Rates & Options
+          Costs
         </h3>
         <div className="flex flex-col justify-around md:flex-row">
           <div className="flex items-center justify-center pb-4 mb-4 border-b border-gray-200 md:border-b-0 md:pb-0">
@@ -34,7 +36,7 @@ const PropertyDetails = ({ property }) => {
             {property.cost && (
               <div className="text-2xl font-bold text-orange-500">
                 {property.cost.monthly ? (
-                  `$${property.cost.monthly.toLocaleString()}`
+                  `¥${property.cost.monthly.toLocaleString()}`
                 ) : (
                   <FaMoneyBill className="text-red-700" />
                 )}
@@ -47,7 +49,7 @@ const PropertyDetails = ({ property }) => {
               <div className="text-2xl font-bold text-orange-500">
                 {" "}
                 {property.cost.fee ? (
-                  `$${property.cost.fee.toLocaleString()}`
+                  `¥${property.cost.fee.toLocaleString()}`
                 ) : (
                   <FaMoneyBill className="text-red-700" />
                 )}
@@ -60,7 +62,7 @@ const PropertyDetails = ({ property }) => {
               <div className="text-2xl font-bold text-orange-500">
                 {" "}
                 {property.cost.deposit ? (
-                  `$${property.cost.deposit.toLocaleString()}`
+                  `¥${property.cost.deposit.toLocaleString()}`
                 ) : (
                   <FaMoneyBill className="text-red-700" />
                 )}
@@ -75,16 +77,16 @@ const PropertyDetails = ({ property }) => {
         <div className="flex justify-center gap-4 mb-4 text-xl text-orange-500 space-x-9">
           <p>
             <FaClock className="inline-block mr-2" /> {property.age} {""}
-            <span className="hidden sm:inline">Age (years)</span>
+            <span className="hidden sm:inline">years</span>
           </p>
           <p>
             <FaWalking className="inline-block mr-2" /> {property.distance} {""}
-            <span className="hidden sm:inline">Distance (mins)</span>
+            <span className="hidden sm:inline">minutes</span>
           </p>
           <p>
             <FaRulerCombined className="inline-block mr-2" />{" "}
             {property.square_meter} {""}
-            <span className="hidden sm:inline">Square meter</span>
+            <span className="hidden sm:inline">square meter</span>
           </p>
         </div>
         <p className="mb-4 text-center text-gray-500">{property.description}</p>

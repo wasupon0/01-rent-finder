@@ -7,18 +7,18 @@ const PropertyAddForm = () => {
     name: "Test Property",
     description: "",
     location: {
-      station: "",
+      station: "Test Station",
       ward: "Test Ward",
       city: "Test City",
-      floor: "",
+      floor: "1",
     },
     age: "3",
     distance: "2",
     square_meter: "25",
     amenities: ["Free Parking"],
     cost: {
+      monthly: "50000",
       fee: "",
-      fee: "2000",
       deposit: "",
     },
     seller_info: {
@@ -208,7 +208,7 @@ const PropertyAddForm = () => {
         <div className="flex flex-wrap mb-4">
           <div className="w-full pr-2 sm:w-1/3">
             <label htmlFor="age" className="block mb-2 font-bold text-gray-700">
-              Age (years)
+              years
             </label>
             <input
               type="number"
@@ -225,7 +225,7 @@ const PropertyAddForm = () => {
               htmlFor="distance"
               className="block mb-2 font-bold text-gray-700"
             >
-              Distance (mins)
+              distance (minutes)
             </label>
             <input
               type="number"
@@ -242,7 +242,7 @@ const PropertyAddForm = () => {
               htmlFor="square_meter"
               className="block mb-2 font-bold text-gray-700"
             >
-              Square meter
+              square meter
             </label>
             <input
               type="number"

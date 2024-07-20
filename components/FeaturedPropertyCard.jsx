@@ -13,7 +13,7 @@ const FeaturedPropertyCard = ({ property }) => {
     const { cost } = property;
 
     if (cost.monthly) {
-      return `${cost.monthly.toLocaleString()} yen`;
+      return `${cost.monthly.toLocaleString()}`;
     } else if (cost.fee) {
       return `${cost.fee.toLocaleString()} yen`;
     } else if (cost.deposit) {
@@ -35,21 +35,21 @@ const FeaturedPropertyCard = ({ property }) => {
         <h3 className="text-xl font-bold">{property.name}</h3>
         <div className="mb-4 text-gray-600">{property.type}</div>
         <h3 className="absolute top-[10px] left-[10px] bg-white px-4 py-2 rounded-lg text-orange-500 font-bold text-right md:text-center lg:text-right">
-          ${getRateDisplay()}
+          ¥{getRateDisplay()}
         </h3>
         <div className="flex justify-center gap-4 mb-4 text-gray-500">
           <p>
             <FaClock className="inline-block mr-2" /> {property.age}{" "}
-            <span className="md:hidden lg:inline">Age (years)</span>
+            <span className="md:hidden lg:inline">years</span>
           </p>
           <p>
             <FaWalking className="inline-block mr-2" /> {property.distance}{" "}
-            <span className="md:hidden lg:inline">Distance (mins)</span>
+            <span className="md:hidden lg:inline">minutes</span>
           </p>
           <p>
             <FaRulerCombined className="inline-block mr-2" />
             {property.square_meter}{" "}
-            <span className="md:hidden lg:inline">Square meter</span>
+            <span className="md:hidden lg:inline">square meter</span>
           </p>
         </div>
 
