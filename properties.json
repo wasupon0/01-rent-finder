@@ -171,8 +171,8 @@
   {
     "_id": "5",
     "owner": "3",
-    "name": "Modern Downtown Studio",
-    "type": "Studio",
+    "name": "Modern Downtown 1R",
+    "type": "1R",
     "description": "Stay in style in this modern downtown studio apartment.",
     "location": {
       "station": "75 Urban Avenue",

@@ -1,30 +1,33 @@
+import createProperty from "@/utils/createProperty";
 import { useEffect, useState } from "react";
 
 const PropertyAddForm = () => {
   const [mounted, setMounted] = useState(false);
+
   const [fields, setFields] = useState({
-    type: "Apartment",
-    name: "Test Property",
-    description: "",
+    type: "1LDK",
+    name: "Station 1LDK 3rd floor",
+    description:
+      "Station 1LDK, 3rd floor - 8 minutes walk, Station Ward, Tokyo",
     location: {
-      station: "Test Station",
-      ward: "Test Ward",
-      city: "Test City",
-      floor: "1",
+      station: "Name Station",
+      ward: "Name Ward",
+      city: "Tokyo",
+      floor: "3",
     },
-    age: "3",
-    distance: "2",
-    square_meter: "25",
+    age: "6",
+    distance: "8",
+    square_meter: "47",
     amenities: ["Free Parking"],
     cost: {
       monthly: "50000",
-      fee: "",
-      deposit: "",
+      fee: "3000",
+      deposit: "49000",
     },
     seller_info: {
-      name: "",
-      email: "test@test.com",
-      phone: "",
+      name: "name0",
+      email: "name0@mail.com",
+      phone: "000-0000-0000",
     },
     images: [],
   });
@@ -32,6 +35,13 @@ const PropertyAddForm = () => {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    const randomProperty = createProperty();
+    //console.log(randomProperty);
+    setFields(randomProperty);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -107,7 +117,15 @@ const PropertyAddForm = () => {
           Add Property
         </h2>
 
+        <button
+          onClick={handleClick}
+          className="w-full px-4 py-2 font-bold text-white bg-yellow-600 rounded-full hover:bg-yellow-700 focus:outline-none focus:shadow-outline"
+        >
+          Create Random Property
+        </button>
+
         <div className="mb-4">
+          <br />
           <label htmlFor="type" className="block mb-2 font-bold text-gray-700">
             Property Type
           </label>
@@ -120,7 +138,7 @@ const PropertyAddForm = () => {
             onChange={handleChange}
           >
             <option value="All">All</option>
-            <option value="Studio">Studio</option>
+            <option value="1R">1R</option>
             <option value="1K">1K</option>
             <option value="1DK">1DK</option>
             <option value="1LDK">1LDK</option>
