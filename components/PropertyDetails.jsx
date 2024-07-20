@@ -96,7 +96,7 @@ const PropertyDetails = ({ property }) => {
         <h3 className="mb-6 text-lg font-bold">Amenities</h3>
 
         {property.amenities && (
-          <ul className="grid grid-cols-1 space-y-2 list-none md:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid grid-cols-1 list-none md:grid-cols-2 lg:grid-cols-3">
             {property.amenities.map((amenity, index) => (
               <li key={index}>
                 <FaCheck className="inline-block mr-2 text-green-600 " />{" "}
