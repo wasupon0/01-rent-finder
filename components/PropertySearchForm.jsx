@@ -8,7 +8,7 @@ import CustomSlider from "./CustomSlider";
 const PropertySearchForm = () => {
   const params = useSearchParams();
 
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState(params.get("location"));
   const [station, setStation] = useState(params.get("location") || "All");
   const [propertyType, setPropertyType] = useState(
     params.get("propertyType") || "All",
@@ -34,7 +34,13 @@ const PropertySearchForm = () => {
     ) {
       router.push("/properties");
     } else {
-      const query = `?location=${location || station}&propertyType=${propertyType}&priceMin=${selectedRange[0]}&priceMax=${selectedRange[1]}`;
+      let locationStation = "";
+      if (station === "All") {
+        locationStation = "";
+      } else {
+        locationStation = location || station;
+      }
+      const query = `?location=${locationStation}&propertyType=${propertyType}&priceMin=${selectedRange[0]}&priceMax=${selectedRange[1]}`;
       router.push(`/properties/search-results${query}`);
     }
   };
