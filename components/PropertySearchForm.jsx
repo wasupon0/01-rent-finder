@@ -8,7 +8,8 @@ import CustomSlider from "./CustomSlider";
 const PropertySearchForm = () => {
   const params = useSearchParams();
 
-  const [location, setLocation] = useState(params.get("location") || "");
+  const [location, setLocation] = useState("");
+  const [station, setStation] = useState(params.get("location") || "All");
   const [propertyType, setPropertyType] = useState(
     params.get("propertyType") || "All",
   );
@@ -22,17 +23,18 @@ const PropertySearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ location, propertyType });
+    console.log({ location, propertyType, selectedRange });
 
     if (
       location === "" &&
+      station === "All" &&
       propertyType === "All" &&
       selectedRange[0] === 0 &&
       selectedRange[1] === 300000
     ) {
       router.push("/properties");
     } else {
-      const query = `?location=${location}&propertyType=${propertyType}&priceMin=${selectedRange[0]}&priceMax=${selectedRange[1]}`;
+      const query = `?location=${location || station}&propertyType=${propertyType}&priceMin=${selectedRange[0]}&priceMax=${selectedRange[1]}`;
       router.push(`/properties/search-results${query}`);
     }
   };
@@ -56,7 +58,10 @@ const PropertySearchForm = () => {
               placeholder="Enter Keywords or Location"
               className="w-full px-4 py-2.5 text-gray-800 bg-white rounded-lg focus:outline-none focus:ring focus:ring-orange-600"
               value={location}
-              onChange={(e) => setLocation(e.target.value)}
+              onChange={(e) => {
+                setLocation(e.target.value);
+                setStation("");
+              }}
             />
           </div>
           <div className="w-full md:w-2/5 md:pl-2">
@@ -83,15 +88,18 @@ const PropertySearchForm = () => {
           </div>
 
           <div className="w-full mt-2 md:w-2/5 md:pl-2 md:m-0">
-            <label htmlFor="property-location" className="sr-only">
-              Property Location
+            <label htmlFor="property-station" className="sr-only">
+              Property Station
             </label>
             <span className="font-semibold text-white">Train Station</span>
             <select
-              id="property-location"
+              id="property-station"
               className="w-full px-4 py-3 text-gray-800 bg-white rounded-lg focus:outline-none focus:ring focus:ring-orange-600"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
+              value={station}
+              onChange={(e) => {
+                setStation(e.target.value);
+                setLocation("");
+              }}
             >
               <option value="All">All</option>
               <option value="Shinjuku">Shinjuku</option>

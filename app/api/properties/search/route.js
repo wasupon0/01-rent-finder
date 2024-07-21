@@ -6,9 +6,13 @@ export const GET = async (request) => {
   try {
     await connectDB();
 
+    // `/api/properties/search?location=${location}&propertyType=${propertyType}&priceMin=${priceMin}&priceMax=${priceMax}`
+
     const { searchParams } = new URL(request.url);
     const location = searchParams.get("location");
     const propertyType = searchParams.get("propertyType");
+    const priceMin = parseInt(searchParams.get("priceMin")) || 0;
+    const priceMax = parseInt(searchParams.get("priceMax")) || 300000;
 
     const terms = location.split(/\s+/).map((term) => term.trim());
     const regexPattern = terms.map((term) => `(?=.*${term})`).join("");
@@ -16,14 +20,19 @@ export const GET = async (request) => {
 
     // Match location pattern against database fields
     let query = {
-      $or: [
-        { name: locationPattern },
-        { description: { $regex: locationPattern } },
-        { "location.station": locationPattern },
-        { "location.ward": locationPattern },
-        { "location.city": locationPattern },
-        { "location.floor": locationPattern },
-      ],
+      $and: [
+        { "cost.monthly": { $gte: priceMin, $lte: priceMax } },
+        {
+          $or: [
+            { description: { $regex: locationPattern } },
+            { name: locationPattern },
+            { "location.station": locationPattern },
+            { "location.ward": locationPattern },
+            { "location.city": locationPattern },
+            { "location.floor": locationPattern },
+          ],
+        },
+      ].filter(Boolean),
     };
 
     // Only check for propertyType if its not 'All'

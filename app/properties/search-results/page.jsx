@@ -17,12 +17,14 @@ const SearchResultsPage = () => {
 
   const location = searchParams.get("location");
   const propertyType = searchParams.get("propertyType");
+  const priceMin = searchParams.get("priceMin");
+  const priceMax = searchParams.get("priceMax");
 
   useEffect(() => {
     const fetchSearchResults = async () => {
       try {
         const res = await fetch(
-          `/api/properties/search?location=${location}&propertyType=${propertyType}`,
+          `/api/properties/search?location=${location}&propertyType=${propertyType}&priceMin=${priceMin}&priceMax=${priceMax}`,
         );
 
         if (res.status === 200) {
@@ -38,7 +40,7 @@ const SearchResultsPage = () => {
       }
     };
     fetchSearchResults();
-  }, [location, propertyType]);
+  }, [location, propertyType, priceMin, priceMax]);
 
   return (
     <>
