@@ -62,7 +62,7 @@ export const POST = async (request) => {
       square_meter: formData.get("square_meter"),
       amenities,
       cost: {
-        fee: formData.get("cost.fee"),
+        monthly: formData.get("cost.monthly"),
         fee: formData.get("cost.fee"),
         deposit: formData.get("cost.deposit"),
       },

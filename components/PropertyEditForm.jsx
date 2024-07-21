@@ -25,7 +25,7 @@ const PropertyEditForm = () => {
     square_meter: "25",
     amenities: ["Free Parking"],
     cost: {
-      fee: "",
+      monthly: "",
       fee: "2000",
       deposit: "",
     },

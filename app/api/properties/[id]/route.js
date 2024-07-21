@@ -103,9 +103,9 @@ export const PUT = async (request, { params }) => {
       square_meter: formData.get("square_meter"),
       amenities,
       cost: {
+        monthly: formData.get("cost.monthly"),
         fee: formData.get("cost.fee"),
-        fee: formData.get("cost.fee"),
-        deposit: formData.get("cost.deposit."),
+        deposit: formData.get("cost.deposit"),
       },
       seller_info: {
         name: formData.get("seller_info.name"),
