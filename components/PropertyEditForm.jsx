@@ -157,13 +157,14 @@ const PropertyEditForm = () => {
             value={fields.type}
             onChange={handleChange}
           >
-            <option value="Apartment">Apartment</option>
-            <option value="Condo">Condo</option>
-            <option value="House">House</option>
-            <option value="Cabin Or Cottage">Cabin or Cottage</option>
-            <option value="Room">Room</option>
             <option value="1R">1R</option>
-            <option value="Other">Other</option>
+            <option value="1K">1K</option>
+            <option value="1DK">1DK</option>
+            <option value="1LDK">1LDK</option>
+            <option value="2K">2K</option>
+            <option value="2DK">2DK</option>
+            <option value="2LDK">2LDK</option>
+            <option value="3K">3K</option>
           </select>
         </div>
         <div className="mb-4">
@@ -496,15 +497,15 @@ const PropertyEditForm = () => {
               <input
                 type="number"
                 id="monthly_cost"
-                name="cost.fee"
+                name="cost.monthly"
                 className="w-full px-3 py-2 border rounded"
-                value={fields.cost.fee}
+                value={fields.cost.monthly}
                 onChange={handleChange}
               />
             </div>
             <div className="flex items-center">
               <label htmlFor="fee_cost" className="mr-2">
-                fee
+                Fee
               </label>
               <input
                 type="number"
@@ -517,7 +518,7 @@ const PropertyEditForm = () => {
             </div>
             <div className="flex items-center">
               <label htmlFor="deposit_cost" className="mr-2">
-                deposit
+                Deposit
               </label>
               <input
                 type="number"

@@ -137,7 +137,6 @@ const PropertyAddForm = () => {
             value={fields.type}
             onChange={handleChange}
           >
-            <option value="All">All</option>
             <option value="1R">1R</option>
             <option value="1K">1K</option>
             <option value="1DK">1DK</option>
