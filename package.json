@@ -9,10 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^2.1.2",
+    "@nextui-org/slider": "^2.2.15",
+    "@nextui-org/system": "^2.2.5",
+    "@nextui-org/theme": "^2.2.9",
     "@react-google-maps/api": "^2.19.3",
     "@vis.gl/react-google-maps": "^1.1.0",
     "aws4": "^1.13.0",
     "cloudinary": "^2.0.3",
+    "framer-motion": "^11.3.8",
     "google-map-react": "^2.2.1",
     "i": "^0.3.7",
     "mongodb": "^6.4.0",

@@ -10,13 +10,15 @@ export const GET = async (request) => {
     const location = searchParams.get("location");
     const propertyType = searchParams.get("propertyType");
 
-    const locationPattern = new RegExp(location, "i");
+    const terms = location.split(/\s+/).map((term) => term.trim());
+    const regexPattern = terms.map((term) => `(?=.*${term})`).join("");
+    const locationPattern = new RegExp(regexPattern, "i");
 
     // Match location pattern against database fields
     let query = {
       $or: [
         { name: locationPattern },
-        { description: locationPattern },
+        { description: { $regex: locationPattern } },
         { "location.station": locationPattern },
         { "location.ward": locationPattern },
         { "location.city": locationPattern },
