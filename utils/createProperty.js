@@ -92,13 +92,31 @@ function getRandomRoomSize(roomType) {
   return getRandomValue(minSize, maxSize);
 }
 
-function getRandomPrice(roomSize) {
-  const price = roomSize * getRandomValue(1000, 2000); // Assuming price is based on size (1000 to 2000 per m²)
-  return Math.max(price, 40000); // Ensure the price is at least 40000
+function getRandomPrice(roomType) {
+  const priceRanges = {
+    "1R": { min: 50000, max: 100000 },
+    "1K": { min: 60000, max: 120000 },
+    "1DK": { min: 70000, max: 140000 },
+    "1LDK": { min: 80000, max: 160000 },
+    "2K": { min: 90000, max: 180000 },
+    "2DK": { min: 100000, max: 200000 },
+    "2LDK": { min: 110000, max: 220000 },
+    "3K": { min: 120000, max: 240000 },
+  };
+
+  const range = priceRanges[roomType];
+  if (!range) {
+    throw new Error(`Invalid room type: ${roomType}`);
+  }
+
+  const price =
+    Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+  return Math.floor(price / 100) * 100;
 }
 
 function getRandomFee() {
-  return getRandomValue(feeRange[0], feeRange[1]);
+  const fee = getRandomValue(feeRange[0], feeRange[1]);
+  return Math.floor(fee / 10) * 10;
 }
 
 function getRandomDeposit(price) {
@@ -160,7 +178,7 @@ function getRoomInfo(randomRoomType) {
 }
 
 function getRoomCost(roomInfo) {
-  const price = getRandomPrice(parseInt(roomInfo.square_meter));
+  const price = getRandomPrice(roomInfo.type);
   const fee = getRandomFee();
   const deposit = getRandomDeposit(price);
 

@@ -15,6 +15,7 @@ const PropertyHeaderImage = ({ image }) => {
             height="0"
             sizes="100vw"
             priority={true}
+            unoptimized={true}
           />
         </div>
       </div>
