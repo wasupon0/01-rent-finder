@@ -228,7 +228,7 @@ const Navbar = () => {
 
       {/* <!-- Mobile menu, show/hide based on menu city. --> */}
       {isMobileMenuOpen && (
-        <div id="mobile-menu">
+        <div id="mobile-menu" className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link
               href="/"
