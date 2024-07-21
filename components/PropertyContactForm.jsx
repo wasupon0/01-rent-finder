@@ -1,6 +1,7 @@
 "use client";
 
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 import { useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
 import { toast } from "react-toastify";
@@ -63,16 +64,12 @@ const PropertyContactForm = ({ property }) => {
         </p>
       ) : property.owner === session.user.id ? (
         <>
-          <p>This is your property</p>
-          <br />
-          <p>
-            <strong>name: </strong>
-            {property.seller_info.name}
-          </p>
-          <p>
-            <strong>email: </strong>
-            {property.seller_info.email}
-          </p>
+          <Link
+            href={`${property._id}/edit`}
+            className="font-bold text-orange-500 hover:underline"
+          >
+            Edit your property
+          </Link>
         </>
       ) : (
         <>
