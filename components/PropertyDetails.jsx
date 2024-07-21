@@ -48,11 +48,9 @@ const PropertyDetails = ({ property }) => {
             {property.cost && (
               <div className="text-2xl font-bold text-orange-500">
                 {" "}
-                {property.cost.fee ? (
-                  `¥${property.cost.fee.toLocaleString()}`
-                ) : (
-                  <FaMoneyBill className="text-red-700" />
-                )}
+                {property.cost.fee
+                  ? `¥${property.cost.fee.toLocaleString()}`
+                  : "No fee"}
               </div>
             )}
           </div>
@@ -61,11 +59,9 @@ const PropertyDetails = ({ property }) => {
             {property.cost && (
               <div className="text-2xl font-bold text-orange-500">
                 {" "}
-                {property.cost.deposit ? (
-                  `¥${property.cost.deposit.toLocaleString()}`
-                ) : (
-                  <FaMoneyBill className="text-red-700" />
-                )}
+                {property.cost.deposit
+                  ? `¥${property.cost.deposit.toLocaleString()}`
+                  : "No deposit"}
               </div>
             )}
           </div>
