@@ -3,7 +3,7 @@ import React from "react";
 import {
   FaCheck,
   FaClock,
-  FaMapMarker,
+  FaMapMarkerAlt,
   FaMoneyBill,
   FaRulerCombined,
   FaWalking,
@@ -18,7 +18,7 @@ const PropertyDetails = ({ property }) => {
         </div>
         <h1 className="mb-4 text-3xl font-bold">{property.name}</h1>
         <div className="flex justify-center mb-4 text-gray-500 align-middle md:justify-start">
-          <FaMapMarker className="mr-2 text-lg text-orange-700 fa-solid fa-location-dot" />
+          <FaMapMarkerAlt className="mr-2 text-lg text-orange-700 fa-solid fa-location-dot" />
           {property.location && (
             <p className="text-orange-700">
               {property.location.station}, {property.location.ward},{" "}

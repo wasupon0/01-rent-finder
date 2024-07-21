@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   FaClock,
-  FaMapMarker,
+  FaMapMarkerAlt,
   FaMoneyBill,
   FaRulerCombined,
   FaWalking,
@@ -77,7 +77,7 @@ const FeaturedPropertyCard = ({ property }) => {
 
         <div className="flex flex-col justify-between lg:flex-row">
           <div className="flex gap-2 mb-4 align-middle lg:mb-0">
-            <FaMapMarker className="text-lg text-orange-700" />
+            <FaMapMarkerAlt className="text-lg text-orange-700" />
             <span className="text-orange-700">
               {" "}
               {property.location.ward} {property.location.city}
