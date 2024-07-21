@@ -571,7 +571,7 @@ const PropertyAddForm = () => {
             htmlFor="images"
             className="block mb-2 font-bold text-gray-700"
           >
-            Images (Select up to 4 images)
+            Images (Select up to 4 images) (Total limit of 4.5MB)
           </label>
           <input
             type="file"
