@@ -1,10 +1,10 @@
 # RentFinder
 
-## Simplifying Apartment Searches
+## Simplifying Apartment Searches yay
 
 _Short, one-liner, catchy and easy to understand_
 
-![Screenshot 1 Hero](./public/project-01.png)
+![Screenshot 1 Hero](./public/project-01-readme-01.png)
 
 ## Contents
 
