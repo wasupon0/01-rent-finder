@@ -98,6 +98,7 @@ export const POST = async (request) => {
       const uploadedImages = await Promise.all(imageUploadPromises);
 
       // Add uploaded images to the propertyData object
+      // Array of images URLs
       propertyData.images = uploadedImages;
     }
 

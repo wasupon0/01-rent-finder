@@ -16,7 +16,8 @@ The search feature allows you to search for apartments by using keywords. You ca
 
 ## Tech Stack
 
-- Diagram showing where this project fits and how it works.
+![Diagram](./public/project-01-filled.png)
+
 - What technology is used in each part of the project.
 
 ## Usage Guide
