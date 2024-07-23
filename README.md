@@ -1,8 +1,6 @@
 # RentFinder
 
-## Simplifying Apartment Searches yay
-
-_Short, one-liner, catchy and easy to understand_
+_Simplifying Apartment Searches_
 
 ![Screenshot 1 Hero](./public/readme-img-01.png)
 
