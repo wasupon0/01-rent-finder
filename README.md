@@ -4,12 +4,6 @@ _Simplifying Apartment Searches_
 
 ![Screenshot 1 Hero](./public/readme-img-01.png)
 
-## Contents
-
-- [Overview and Features](#overview-and-features)
-- [Tech Stack](#tech-stack)
-- [Usage Guide](#usage-guide)
-
 ## Overview and Features
 
 RentFinder helps you quickly and easily find the perfect apartment that fits your preferences and budget.
