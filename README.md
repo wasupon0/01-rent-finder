@@ -12,7 +12,7 @@ _Simplifying Apartment Searches_
 
 ## Overview and Features
 
-- Intro paragraph about what this project is, what it does, and how it’s used.
+- RentFinder helps you quickly and easily find the perfect apartment that fits your preferences and budget.
 - Keep it simple about the value your project provides.
 - Keywords / solve user pain point / problem.
 
