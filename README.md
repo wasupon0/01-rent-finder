@@ -1,16 +1,14 @@
 # RentFinder
-
 _Simplifying Apartment Searches_
+![hero](./public/readme-img-01.png)
 
-![Screenshot 1 Hero](./public/readme-img-01.png)
 
 ## Overview
-
 RentFinder helps you quickly and easily find the perfect apartment that fits your preferences and budget.
 
-## Tech Stack
 
-![Diagram](./public/project-01-filled.png)
+## Tech Stack
+![diagram](./public/project-01-filled.png)
 
 ### Front-End
 RentFinder's front-end is built with Next.js, enabling fast, SEO-friendly applications through server-side rendering and static site generation. Tailwind CSS is used for rapid UI development with a clean, maintainable codebase, ensuring a seamless user experience for navigating listings and searching properties.
@@ -20,6 +18,7 @@ The back-end of RentFinder leverages Next.js as a full-stack solution, utilizing
 
 ### Database
 RentFinder uses MongoDB, a document database, for its flexibility in handling complex data structures like property listings and user information. Cloudinary handles image storage and optimization, ensuring fast delivery of high-quality property images.
+
 
 ## Features
 
