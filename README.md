@@ -14,17 +14,43 @@ RentFinder helps you quickly and easily find the perfect apartment that fits you
 
 ![diagram](./public/project-01-filled.png)
 
-### Front-End
 
-RentFinder's front-end is built with Next.js, enabling fast, SEO-friendly applications through server-side rendering and static site generation. Tailwind CSS is used for rapid UI development with a clean, maintainable codebase, ensuring a seamless user experience for navigating listings and searching properties.
+### Front-End
+#### Next.js:
+- Next.js, a React framework, is used for server-side rendering (SSR) in RentFinder, enhancing performance and SEO.
+- It supports static site generation (SSG), ensuring fast loading times and efficient handling of dynamic content.
+- This framework enables seamless navigation and interaction within the application, providing a superior user experience.
+  
+#### Tailwind CSS:
+- Tailwind CSS is a utility-first CSS framework that allows for rapid and flexible UI development in RentFinder.
+- It helps maintain a clean and maintainable codebase, making it easier to implement and manage styles.
+- This framework enhances the overall user experience by providing a visually consistent and intuitive interface for navigating and searching properties.
 
 ### Back-End
+The back-end of RentFinder is robustly handled by Next.js, which is not just a front-end framework but a full-stack solution. Next.js provides powerful features like the App Router and Route Handlers that significantly improve the developer's experience.
 
-The back-end of RentFinder leverages Next.js as a full-stack solution, utilizing the App Router for intuitive and scalable page routing and Route Handlers for managing API endpoints efficiently. NextAuth.js is integrated for seamless Google authentication, and middleware functions ensure secure and optimized request processing, enhancing the overall robustness and security of the application.
+#### Route Handlers:
+- RentFinder uses route handler files (route.js) within the app directory to manage API routes, allowing for clean and maintainable code.
+- Each HTTP method (GET, POST, PUT, DELETE) is handled separately within these files, enhancing code modularity and clarity.
+- This approach simplifies the creation and management of endpoints, such as app/api/properties/user/[userId]/route.js to manage each user's property listings.
+
+#### Authentication:
+- RentFinder integrates NextAuth.js for authentication, simplifying the process of adding secure Google authentication.
+- NextAuth.js has built-in support for GoogleProvider, ensuring seamless login with Google accounts.
+
+#### Middleware Functions:
+- Middleware functions in Next.js enhance RentFinder's back-end by processing requests at various stages.
+- These functions are used for tasks such as authentication, logging, and data validation, ensuring secure and optimized data handling.
 
 ### Database
+#### MongoDB:
+- RentFinder utilizes MongoDB, a NoSQL database, to manage complex data structures such as property listings and user information.
+- Its document-based model efficiently handles and organizes the diverse data types required for the application.
 
-RentFinder uses MongoDB, a document database, for its flexibility in handling complex data structures like property listings and user information. Cloudinary handles image storage and optimization, ensuring fast delivery of high-quality property images.
+#### Cloudinary:
+- Cloudinary is used for image storage and management, ensuring efficient handling of property images.
+- This ensures that property images are delivered quickly and without compromising on quality, enhancing the user experience.
+
 <br/><br/>
 
 ## Features
