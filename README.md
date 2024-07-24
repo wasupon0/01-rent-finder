@@ -36,12 +36,16 @@ https://github.com/user-attachments/assets/78975413-5fe2-4c86-8529-b4c86c3dab51
 The search feature allows you to search for apartments by using keywords. You can search by city, how many minutes to train station, and filter the price range.
 <br/><br/>
 
+---
+
 ### Authentication Feature
 
 https://github.com/user-attachments/assets/a9cef685-3f6e-4ba4-b341-991fe876a26f
 
 By leveraging NextAuth.js, and Google provider. Users can easily sign in to add or edit a property. User profile will be automatically created by retrieving user data such as name, email, and profile picture from their google account.
 <br/><br/>
+
+---
 
 ### Add Property Feature
 
@@ -50,6 +54,8 @@ https://github.com/user-attachments/assets/f3c29d1b-1a52-4502-be17-3edd15a97e44
 The add property feature allows you to add a new property to the database. After logged in, the property manager can add a new property by filling out the form and upload images.
 <br/><br/>
 
+---
+
 ### Property Details Feature
 
 https://github.com/user-attachments/assets/fae5f05e-adf7-41fa-8e9f-8e9854d86c07
@@ -57,12 +63,16 @@ https://github.com/user-attachments/assets/fae5f05e-adf7-41fa-8e9f-8e9854d86c07
 When a user clicks on a property card, they will be directed to the property details page. The page contains all the property details information in sections. The cost section provides monthly costs, fees, and deposit information. The description section gives details such as room sizes, amenities, building age, and distance from the train station. It also includes room pictures and the property's map location.
 <br/><br/>
 
+---
+
 ### Bookmark and Messaging Feature
 
 https://github.com/user-attachments/assets/b33594af-a574-40aa-b251-4d764e9986c0
 
 When you find a property that you are interested in, you can saved it to your bookmark list. You can also send a message to the property owner to ask for more information.
 <br/><br/>
+
+---
 
 ### Profile Listing Edit Feature
 
