@@ -50,7 +50,6 @@ The back-end of RentFinder is robustly handled by Next.js, which is not just a f
 #### Cloudinary:
 - Cloudinary is used for image storage and management, ensuring efficient handling of property images.
 - This ensures that property images are delivered quickly and without compromising on quality, enhancing the user experience.
-
 <br/><br/>
 
 ## Features
