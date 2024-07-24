@@ -1,6 +1,7 @@
 # RentFinder
 _Simplifying Apartment Searches_
 
+
 ![hero](./public/readme-img-01.png)
 
 
